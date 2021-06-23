@@ -34,3 +34,33 @@ window.addEventListener('scroll', function() {
         header.classList.remove('scroll')
     }
 })
+
+//Testimonials caroussel slider swiper.js
+const swiper = new Swiper('.swiper-container', {
+    slidesPerview: 1,
+    pagination: {
+        el: '.swiper-pagination'
+    },
+    mousewheel: true,
+    keyboard: true
+});
+
+
+/**
+ *ScrollReveal
+ *Show elements when page scrolling 
+ */
+const scrollReveal = ScrollReveal({
+    origin: 'top',
+    distance: '30px',
+    duration: 700,
+    reset: true
+})
+
+scrollReveal.reveal(`
+    #home .text, #home .image,
+    #about .text, #about .image,
+    #services header, #services .card,
+    #testimonials hearde, #testimonials .testimonials,
+    #contact .text, #contact .links
+    `, { interval: 100})
